@@ -268,3 +268,77 @@ th {
 
     opacity: 0.65;
 }
+/* =========================================
+   PAST SHOWS — MOBILE / ROCK EDITORIAL
+========================================= */
+
+@media (max-width: 768px) {
+
+    .bk {
+        padding: 0 14px 100px;
+    }
+
+    .bk section {
+        padding: 45px 22px;
+        border-radius: 0;
+        border-left: 3px solid var(--main-color);
+        background: rgba(0, 0, 0, 0.72);
+    }
+
+    .bk table {
+        margin-top: 35px;
+        width: 100%;
+    }
+
+    .bk tbody tr {
+        display: grid;
+        grid-template-columns: 105px 1fr;
+        align-items: center;
+
+        padding: 17px 0;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        background: transparent;
+
+        transition: 0.2s ease;
+    }
+
+    /* DATE */
+    .bk tbody td:first-child {
+        padding-right: 16px;
+
+        font-size: 0.68rem;
+        font-weight: 700;
+        line-height: 1.4;
+
+        letter-spacing: 1px;
+        text-transform: uppercase;
+
+        color: rgba(255, 255, 255, 0.48);
+    }
+
+   
+    .bk tbody td:last-child {
+        padding-left: 18px;
+
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+
+        font-size: 0.95rem;
+        font-weight: 700;
+        line-height: 1.25;
+
+        letter-spacing: 0.5px;
+
+        color: rgba(255, 255, 255, 0.95);
+
+        text-align: left;
+    }
+
+    .bk tbody tr:last-child {
+        border-bottom: none;
+    }
+
+    .bk tbody tr:active {
+        background: rgba(255, 255, 255, 0.04);
+    }
+}
