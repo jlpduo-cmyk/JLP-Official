@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact – JLP | Rock Band from Vienna</title>
+
+<link rel="icon" href="Banner JLP LOGO.png">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="contactstyle.css">
+<script src="script.js" defer></script>
+</head>
+
+<body>
+
+<header>
+    <div id="overlay"></div>
+
+    <div class="logo">
+        <a href="index.html">
+            <img src="JLP Logos Thick white.png" alt="JLP Logo">
+        </a>
+    </div>
+
+    <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="lyrics.html">Lyrics</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div id="menu-icon">
+        <svg viewBox="0 0 24 24" width="28" height="28">
+            <rect class="line top" x="3" y="6" width="18" height="2.5" rx="1.25"/>
+            <rect class="line middle" x="6" y="11.75" width="12" height="2.5" rx="1.25"/>
+            <rect class="line bottom" x="3" y="17.5" width="18" height="2.5" rx="1.25"/>
+        </svg>
+    </div>
+</header>
+
+<section class="contact-wrapper">
+    <div class="form-container">
+
+        <div class="contactform">
+            <h1>Contact Form</h1>
+
+            <form action="https://formspree.io/f/mjkvdpez" method="post" id="contact-form">
+                <input type="text" name="first" placeholder="First Name" required>
+                <input type="text" name="last" placeholder="Last Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <textarea rows="5" name="message" placeholder="Your Message" required></textarea>
+
+                <button type="submit">Send Message</button>
+
+                <p class="form-note">
+                    By submitting this form, you agree to our 
+                    <a href="privacy.html">privacy policy</a>.
+                </p>
+            </form>
+
+            <div class="contact-extra">
+                <p><strong>Tech:</strong> luka.petener@gmail.com</p>
+                <p><strong>Booking:</strong> 
+                    <a href="mailto:jlptheband.booking@gmail.com">
+                        jlptheband.booking@gmail.com
+                    </a>
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<div id="cookie-banner" class="cookie-banner">
+
+  <!-- CLOSE (TOP RIGHT) -->
+  
+
+  <div class="cookie-row">
+
+    <div class="cookie-text-block">
+      <strong>We use cookies</strong>
+      <p>
+    This website uses cookies and third-party services (YouTube, Spotify, Meta Pixel).
+    Read our <a href="privacy.html">privacy policy</a>.
+  </p>
+    </div>
+
+    <div class="cookie-buttons">
+      <button onclick="acceptNecessary()">Only essential</button>
+      <button class="primary" onclick="acceptAllCookies()">Accept all</button>
+      <button onclick="openCookieSettings()">Settings</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- COOKIE MODAL (SEPARATE, NOT INSIDE BANNER) -->
+<div id="cookie-modal" class="cookie-modal hidden">
+  <div class="cookie-box">
+
+    <div class="cookie-header">
+      <h2>Privacy Settings</h2>
+      <button class="close" onclick="closeModal()">×</button>
+    </div>
+
+    <div class="cookie-option">
+      <div class="cookie-text">
+        <strong>Essential</strong>
+        <span>Required for basic site functionality</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" checked disabled>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="cookie-option">
+      <div class="cookie-text">
+        <strong>Analytics</strong>
+        <span>Helps us understand how visitors use the site</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="analytics">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="cookie-option">
+      <div class="cookie-text">
+        <strong>Marketing & External Media</strong>
+        <span>Enables Meta Pixel, YouTube & Spotify</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="marketing">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="cookie-actions">
+      <button onclick="acceptNecessary()">Only essential</button>
+      <button class="primary" onclick="savePreferences()">Save selection</button>
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer" style="text-align: center; width: 100%;">
+  <div class="footer-links" style="display: inline-flex; gap: 12px; align-items: center;">
+
+    <a href="privacy.html">Privacy Policy</a>
+
+    <span style="width:1px;height:12px;background:rgba(255,255,255,0.3);display:inline-block;"></span>
+
+    <a href="impressum.html">Imprint</a>
+
+    <span style="width:1px;height:12px;background:rgba(255,255,255,0.3);display:inline-block;"></span>
+
+    <button type="button"
+            onclick="openCookieSettings()"
+            style="background:none;border:none;padding:0;color:inherit;font:inherit;cursor:pointer;">
+      Cookie Settings
+    </button>
+
+  </div>
+</footer>
+</body>
+</html>

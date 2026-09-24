@@ -1,0 +1,72 @@
+//* =========================
+   LYRICS PAGE – CONCISE VERSION
+========================= */
+
+.lyrics-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 40px; /* reduced */
+}
+
+/* More compact panel */
+.lyrics-panel {
+    width: 100%;
+    max-width: 720px;              /* slightly narrower */
+    padding: 50px 55px;            /* reduced padding */
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+/* Song titles */
+.lyrics-panel h1 {
+    font-size: 2rem;               /* smaller */
+    margin-top: 60px;              /* reduced spacing */
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+.lyrics-panel h1:first-child {
+    margin-top: 0;
+}
+
+/* Lyrics text */
+.lyrics-panel p {
+    font-size: 1.05rem;            /* slightly smaller */
+    line-height: 1.75;             /* tighter but readable */
+    white-space: pre-line;
+    text-align: center;
+    margin-bottom: 55px;           /* less space between songs */
+}
+
+/* Subtle divider between songs */
+.lyrics-panel h1:not(:first-child) {
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .lyrics-panel {
+        padding: 30px 25px;
+        margin: 0 15px;
+    }
+
+    .lyrics-panel h1 {
+        font-size: 1.6rem;
+        margin-top: 45px;
+    }
+
+    .lyrics-panel p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 45px;
+    }
+}
