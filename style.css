@@ -749,25 +749,100 @@ input:disabled + .slider {
 }
 
 
+/* =========================================
+   MOBILE SHOWS — DIRTY POSTER WALL
+========================================= */
+
 @media (max-width: 768px) {
 
     .bk {
         margin: 90px 0;
-        padding: 0 18px;
+        padding: 20px 10px 100px;
     }
+
+    /* DARK CLUB WALL */
+    .bk section {
+        width: 100%;
+        padding: 45px 14px 55px;
+
+        background:
+            radial-gradient(
+                circle at 20% 25%,
+                rgba(255,255,255,0.035),
+                transparent 25%
+            ),
+            radial-gradient(
+                circle at 80% 75%,
+                rgba(255,255,255,0.025),
+                transparent 30%
+            ),
+            #0b0b0b;
+
+        border: none;
+        border-radius: 0;
+
+        box-shadow:
+            inset 0 0 80px rgba(0,0,0,0.9);
+    }
+
+
+    /* =========================
+       SHOWS HEADLINE
+    ========================= */
+
+    .bk caption {
+        width: fit-content;
+
+        margin: 0 auto 48px;
+        padding: 0 22px;
+
+        font-size: 1.65rem;
+        font-weight: 500;
+
+        letter-spacing: 7px;
+        text-transform: uppercase;
+
+        color: rgba(255,255,255,0.92);
+
+        position: relative;
+    }
+
+    /* lines beside SHOWS */
+
+    .bk caption::before,
+    .bk caption::after {
+        content: "";
+
+        position: absolute;
+        top: 50%;
+
+        width: 38px;
+        height: 1px;
+
+        background: rgba(255,255,255,0.35);
+    }
+
+    .bk caption::before {
+        right: 100%;
+    }
+
+    .bk caption::after {
+        left: 100%;
+    }
+
+
+    /* =========================
+       TABLE
+    ========================= */
 
     .bk table {
         width: 100%;
-        background: transparent;
-        border-collapse: separate;
-        border-spacing: 0 14px;
-    }
+        margin: 0;
 
-    .bk caption {
-        font-size: 1.65rem;
-        font-weight: 600;
-        letter-spacing: 5px;
-        margin-bottom: 28px;
+        background: transparent;
+
+        border-collapse: separate;
+        border-spacing: 0;
     }
 
     .bk thead {
@@ -776,81 +851,288 @@ input:disabled + .slider {
 
     .bk tbody {
         display: block;
+        width: 100%;
     }
+
+
+    /* =========================
+       EACH SHOW = OLD FLYER
+    ========================= */
 
     .bk tbody tr {
+        position: relative;
+
         display: grid;
-        grid-template-columns: 1fr auto;
-        grid-template-areas:
-            "date time"
-            "location location";
 
-        width: 100%;
+        grid-template-columns:
+            82px
+            1fr
+            45px;
 
-       
-        padding: 22px 22px;
+        align-items: center;
 
-        background: rgba(0, 0, 0, 0.55);
+        width: 96%;
 
-        
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        margin: -2px auto 13px;
+        padding: 21px 14px;
 
-        border-radius: 16px;
+        background:
+            radial-gradient(
+                circle at 15% 20%,
+                rgba(0,0,0,0.18),
+                transparent 23%
+            ),
+            radial-gradient(
+                circle at 82% 70%,
+                rgba(255,255,255,0.07),
+                transparent 30%
+            ),
+            linear-gradient(
+                110deg,
+                #85847e,
+                #aaa89e 45%,
+                #70706b
+            ) !important;
 
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(0,0,0,0.85);
+        border-radius: 0;
 
         box-shadow:
-            0 8px 25px rgba(0, 0, 0, 0.18);
+            5px 8px 0 rgba(0,0,0,0.75),
+            inset 0 0 28px rgba(0,0,0,0.22);
 
-        transition:
-            transform 0.25s ease,
-            background 0.25s ease;
+        transform: rotate(-1.4deg);
+
+        overflow: visible;
+
+        transition: transform 0.2s ease;
     }
 
-    .bk tbody td {
-        padding: 0;
-        border: none;
+
+    /* =========================
+       MESSY PLACEMENT
+    ========================= */
+
+    .bk tbody tr:nth-child(2) {
+        width: 93%;
+        margin-left: 9px;
+
+        transform: rotate(1.6deg);
+
+        filter:
+            brightness(0.82)
+            contrast(1.16);
     }
 
-    
+    .bk tbody tr:nth-child(3) {
+        width: 98%;
+        margin-left: -2px;
+
+        transform: rotate(-0.6deg);
+    }
+
+    .bk tbody tr:nth-child(4) {
+        width: 94%;
+
+        transform: rotate(2deg);
+
+        filter:
+            brightness(0.78)
+            contrast(1.2);
+    }
+
+
+    /* =========================
+       OLD TAPE
+    ========================= */
+
+    .bk tbody tr::before {
+        content: "";
+
+        position: absolute;
+
+        top: -8px;
+        left: 50%;
+
+        width: 50px;
+        height: 15px;
+
+        transform:
+            translateX(-50%)
+            rotate(-5deg);
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(55,53,47,0.72),
+                rgba(140,135,115,0.65),
+                rgba(60,57,50,0.72)
+            );
+
+        opacity: 0.78;
+
+        box-shadow:
+            0 2px 3px rgba(0,0,0,0.35);
+
+        z-index: 2;
+    }
+
+    .bk tbody tr:nth-child(2)::before {
+        left: 20%;
+
+        transform:
+            translateX(-50%)
+            rotate(8deg);
+    }
+
+    .bk tbody tr:nth-child(3)::before {
+        left: 78%;
+
+        transform:
+            translateX(-50%)
+            rotate(-8deg);
+    }
+
+    .bk tbody tr:nth-child(4)::before {
+        left: 37%;
+
+        transform:
+            translateX(-50%)
+            rotate(5deg);
+    }
+
+
+    /* =========================
+       DIRTY XEROX MARK
+    ========================= */
+
+    .bk tbody tr::after {
+        content: "";
+
+        position: absolute;
+
+        left: -4px;
+        bottom: 6px;
+
+        width: 40%;
+        height: 4px;
+
+        background: rgba(0,0,0,0.7);
+
+        transform: rotate(-1deg);
+
+        opacity: 0.45;
+    }
+
+
+    /* =========================
+       DATE
+    ========================= */
+
     .bk tbody td:nth-child(1) {
-        grid-area: date;
+        padding: 0 10px 0 0;
+
+        border: none;
+
+        color: rgba(0,0,0,0.62);
+
+        font-size: 0.63rem;
+        font-weight: 800;
+
+        line-height: 1.35;
+
+        letter-spacing: 0.7px;
+        text-transform: uppercase;
+
+        text-align: left;
+    }
+
+
+    /* =========================
+       VENUE
+    ========================= */
+
+    .bk tbody td:nth-child(2) {
+        padding: 4px 10px 4px 13px;
+
+        border: none;
+        border-left: 3px solid #111;
+
+        color: #090909;
 
         font-size: 0.95rem;
-        font-weight: 600;
-        line-height: 1.4;
+        font-weight: 900;
+
+        line-height: 1.05;
+
+        letter-spacing: -0.2px;
+        text-transform: uppercase;
+
+        text-align: left;
     }
 
-   
-    .bk tbody td:nth-child(2) {
-        grid-area: location;
 
-        margin-top: 10px;
+    /* =========================
+       TIME
+    ========================= */
 
-        font-size: 0.85rem;
-        line-height: 1.4;
-
-        color: rgba(255, 255, 255, 0.6);
-    }
-
-    
     .bk tbody td:nth-child(3) {
-        grid-area: time;
+        padding: 0;
 
-        padding-left: 20px;
+        border: none;
 
-        font-size: 0.9rem;
-        font-weight: 600;
+        color: rgba(0,0,0,0.58);
 
-        color: var(--main-color);
+        font-size: 0.68rem;
+        font-weight: 800;
+
+        letter-spacing: 0.5px;
 
         text-align: right;
         white-space: nowrap;
     }
 
-    .bk tbody tr:hover {
-        background: rgba(0, 0, 0, 0.65);
+
+    /* =========================
+       BLACK XEROX FLYER
+    ========================= */
+
+    .bk tbody tr:nth-child(3) {
+        background:
+            radial-gradient(
+                circle at 70% 30%,
+                rgba(255,255,255,0.06),
+                transparent 25%
+            ),
+            linear-gradient(
+                120deg,
+                #101010,
+                #252525 50%,
+                #080808
+            ) !important;
+
+        border: 1px solid rgba(255,255,255,0.12);
+
+        box-shadow:
+            -5px 8px 0 rgba(0,0,0,0.8);
+    }
+
+    .bk tbody tr:nth-child(3) td:nth-child(1),
+    .bk tbody tr:nth-child(3) td:nth-child(3) {
+        color: rgba(255,255,255,0.52);
+    }
+
+    .bk tbody tr:nth-child(3) td:nth-child(2) {
+        color: rgba(255,255,255,0.92);
+
+        border-left-color:
+            rgba(255,255,255,0.7);
+    }
+
+
+    /* PRESS EFFECT */
+    .bk tbody tr:active {
+        transform: rotate(0deg) scale(1.02);
     }
 }
 

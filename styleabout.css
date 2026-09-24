@@ -269,76 +269,271 @@ th {
     opacity: 0.65;
 }
 /* =========================================
-   PAST SHOWS — MOBILE / ROCK EDITORIAL
+   PAST SHOWS — MOBILE POSTER WALL
+========================================= */
+
+/* =========================================
+   PAST SHOWS — DIRTY GIG WALL
 ========================================= */
 
 @media (max-width: 768px) {
 
     .bk {
-        padding: 0 14px 100px;
+        padding: 15px 10px 110px;
     }
 
+    /* dunkle Club-Wand */
     .bk section {
-        padding: 45px 22px;
+        padding: 45px 14px 60px;
+
+        background:
+            radial-gradient(
+                circle at 20% 20%,
+                rgba(255,255,255,0.035),
+                transparent 25%
+            ),
+            radial-gradient(
+                circle at 80% 70%,
+                rgba(255,255,255,0.025),
+                transparent 30%
+            ),
+            #0b0b0b;
+
+        border: none;
         border-radius: 0;
-        border-left: 3px solid var(--main-color);
-        background: rgba(0, 0, 0, 0.72);
+
+        box-shadow:
+            inset 0 0 80px rgba(0,0,0,0.9);
+    }
+
+    .bk .about-header {
+        margin-bottom: 45px !important;
     }
 
     .bk table {
-        margin-top: 35px;
         width: 100%;
+        margin: 0;
     }
+
+    .bk tbody {
+        display: block;
+    }
+
+    /* =========================
+       FLYER
+    ========================= */
 
     .bk tbody tr {
+        position: relative;
+
         display: grid;
-        grid-template-columns: 105px 1fr;
+        grid-template-columns: 90px 1fr;
         align-items: center;
 
-        padding: 17px 0;
+        width: 96%;
 
-        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-        background: transparent;
+        margin: -2px auto 9px;
+        padding: 21px 16px;
 
-        transition: 0.2s ease;
+        background:
+            radial-gradient(
+                circle at 15% 20%,
+                rgba(0,0,0,0.16),
+                transparent 22%
+            ),
+            radial-gradient(
+                circle at 85% 70%,
+                rgba(255,255,255,0.08),
+                transparent 28%
+            ),
+            linear-gradient(
+                110deg,
+                #8d8c86,
+                #b0aea4 45%,
+                #777771
+            ) !important;
+
+        border: 1px solid rgba(0,0,0,0.75);
+        border-radius: 0;
+
+        box-shadow:
+            5px 8px 0 rgba(0,0,0,0.75),
+            inset 0 0 25px rgba(0,0,0,0.18);
+
+        transform: rotate(-1.5deg);
+
+        overflow: visible;
     }
 
-    /* DATE */
-    .bk tbody td:first-child {
-        padding-right: 16px;
+    /* Flyer absichtlich unregelmäßig */
 
-        font-size: 0.68rem;
-        font-weight: 700;
-        line-height: 1.4;
+    .bk tbody tr:nth-child(even) {
+        transform: rotate(1.4deg);
+        width: 94%;
+        margin-left: 8px;
+    }
+
+    .bk tbody tr:nth-child(3n) {
+        transform: rotate(-0.6deg);
+        width: 98%;
+        margin-left: -2px;
+    }
+
+    .bk tbody tr:nth-child(4n) {
+        transform: rotate(2deg);
+        filter: brightness(0.78) contrast(1.18);
+    }
+
+    .bk tbody tr:nth-child(5n) {
+        transform: rotate(-2.1deg);
+        width: 92%;
+        filter: contrast(1.15);
+    }
+
+    /* =========================
+       DIRTY XEROX STRIPE
+    ========================= */
+
+    .bk tbody tr::after {
+        content: "";
+
+        position: absolute;
+
+        left: -5px;
+        bottom: 7px;
+
+        width: 45%;
+        height: 4px;
+
+        background: rgba(0,0,0,0.7);
+
+        transform: rotate(-1deg);
+
+        opacity: 0.5;
+    }
+
+    /* =========================
+       TAPE
+    ========================= */
+
+    .bk tbody tr::before {
+        content: "";
+
+        position: absolute;
+
+        top: -8px;
+        left: 50%;
+
+        width: 52px;
+        height: 15px;
+
+        transform:
+            translateX(-50%)
+            rotate(-4deg);
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(70,68,60,0.7),
+                rgba(150,145,125,0.65),
+                rgba(75,72,62,0.7)
+            );
+
+        opacity: 0.75;
+
+        box-shadow:
+            0 2px 3px rgba(0,0,0,0.3);
+
+        z-index: 2;
+    }
+
+    /* manche Flyer Tape seitlich */
+
+    .bk tbody tr:nth-child(3n)::before {
+        left: 20%;
+        transform:
+            translateX(-50%)
+            rotate(7deg);
+    }
+
+    .bk tbody tr:nth-child(5n)::before {
+        left: 78%;
+        transform:
+            translateX(-50%)
+            rotate(-8deg);
+    }
+
+    /* =========================
+       DATE
+    ========================= */
+
+    .bk tbody td:first-child {
+        padding-right: 12px;
+
+        color: rgba(0,0,0,0.65);
+
+        font-size: 0.65rem;
+        font-weight: 800;
+
+        line-height: 1.35;
 
         letter-spacing: 1px;
         text-transform: uppercase;
 
-        color: rgba(255, 255, 255, 0.48);
+        text-align: left;
     }
 
-   
+    /* =========================
+       VENUE
+    ========================= */
+
     .bk tbody td:last-child {
-        padding-left: 18px;
+        padding: 4px 0 4px 15px;
 
-        border-left: 1px solid rgba(255, 255, 255, 0.2);
+        border-left: 3px solid #111;
 
-        font-size: 0.95rem;
-        font-weight: 700;
-        line-height: 1.25;
+        color: #090909;
 
-        letter-spacing: 0.5px;
+        font-size: 1.02rem;
+        font-weight: 900;
 
-        color: rgba(255, 255, 255, 0.95);
+        line-height: 1.05;
+
+        letter-spacing: -0.2px;
+        text-transform: uppercase;
 
         text-align: left;
     }
 
-    .bk tbody tr:last-child {
-        border-bottom: none;
+    /* manche Flyer invertiert / Xerox */
+
+    .bk tbody tr:nth-child(6n) {
+        background:
+            linear-gradient(
+                120deg,
+                #111,
+                #242424 50%,
+                #090909
+            ) !important;
+
+        border: 1px solid rgba(255,255,255,0.15);
+
+        box-shadow:
+            -5px 7px 0 rgba(0,0,0,0.8);
     }
 
+    .bk tbody tr:nth-child(6n) td:first-child {
+        color: rgba(255,255,255,0.55);
+    }
+
+    .bk tbody tr:nth-child(6n) td:last-child {
+        color: rgba(255,255,255,0.9);
+        border-left-color: rgba(255,255,255,0.75);
+    }
+
+    /* Touch */
+
     .bk tbody tr:active {
-        background: rgba(255, 255, 255, 0.04);
+        transform: rotate(0deg) scale(1.025);
     }
 }
